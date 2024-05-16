@@ -11,9 +11,10 @@ def main(argv):
     elif (extension == 'docx'):
         from docx import Document
         document = Document(inputFile)
-        text = ''
+        full_text = []
         for para in document.paragraphs:
-            text = text + para.text
+            full_text.append(para.text)
+        text = '\n'.join(full_text)
         print(text)
     else:
         print("Not a Word Document!!!")
