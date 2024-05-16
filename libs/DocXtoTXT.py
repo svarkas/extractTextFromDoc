@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as ET
-from xml.etree.ElementTree import XML
 import zipfile
 
 
