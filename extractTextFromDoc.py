@@ -12,12 +12,6 @@ def main(argv):
         od = OD.OldDoc()
         print(od.extractText(inputFile))
     elif extension == 'docx':
-        # from docx import Document
-        # document = Document(inputFile)
-        # full_text = []
-        # for para in document.paragraphs:
-        #     full_text.append(para.text)
-        # text = '\n'.join(full_text)
         dxt = DXT.DocXtoTXT()
         print(dxt.get_docx_txt(inputFile))
     else:
