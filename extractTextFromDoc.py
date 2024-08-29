@@ -2,16 +2,16 @@
 import sys
 import libs.OldDoc as OD
 import libs.DocXtoTXT as DXT
-
+import magic
 
 def main(argv):
     inputFile=argv[1]
     extension = inputFile.split(".")[-1]
-
-    if extension == 'doc':
+    file_type_info = magic.from_file(inputFile)
+    if "Composite Document File V2 Document" in file_type_info: 
         od = OD.OldDoc()
         print(od.extractText(inputFile))
-    elif extension == 'docx':
+    elif file_type_info == "Microsoft Word 2007+":
         dxt = DXT.DocXtoTXT()
         print(dxt.get_docx_txt(inputFile))
     else:
