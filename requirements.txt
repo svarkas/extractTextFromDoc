@@ -1,0 +1,3 @@
+compoundfiles
+python-magic
+
