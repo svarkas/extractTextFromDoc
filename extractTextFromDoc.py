@@ -16,7 +16,7 @@ def main(argv):
         man_text = man_text.replace("\r\n", "\n").replace("\r", "\n")
         man_text = re.sub(r"[^\x09\x0A\x0D\x20-\x7E]", "", man_text)
         print(man_text)
-    elif file_type_info == "Microsoft Word 2007+":
+    elif file_type_info == "Microsoft Word 2007+" or file_type_info == "Microsoft OOXML":
         dxt = DXT.DocXtoTXT()
         print(dxt.get_docx_txt(inputFile))
     else:
